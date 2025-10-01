@@ -40,20 +40,6 @@ public class HistoricoFalhasController {
         }
     }
 
-    @GetMapping
-    public ResponseEntity<Object> getFalha(@RequestParam Integer id) {
-        try {
-            final HistoricoFalhasDTO dto = falhaService.getFalhaDTO(id);
-            return ResponseEntity.ok(dto);
-        } catch (ObjetoNaoEncontradoException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Algo deu errado ao tentar buscar o registro das falhas de máquinas. Tente novamente");
-        }
-    }
-
     @PutMapping
     public ResponseEntity<String> updateFalha(@RequestBody HistoricoFalhasDTO dto) {
         try {
