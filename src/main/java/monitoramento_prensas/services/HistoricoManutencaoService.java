@@ -35,7 +35,7 @@ public class HistoricoManutencaoService {
     }
 
     /**
-     * Cria uma novo {@link HistoricoManutencao} no banco de dados
+     * Cria um novo {@link HistoricoManutencao} no banco de dados
      *
      * @param dto
      * @throws PersistenceException
