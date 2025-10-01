@@ -74,26 +74,6 @@ public class MaquinaService {
     }
 
     /**
-     * Atualiza o cadastro de uma {@link Maquina}.
-     *
-     * @param dto
-     * @throws ObjetoNaoEncontradoException
-     * @throws PersistenceException
-     */
-    public void updateMaquina(final MaquinaDTO dto) throws ObjetoNaoEncontradoException, PersistenceException {
-        try {
-            final Maquina maquina = this.getMaquina(dto.id());
-            maquina.setNome(dto.nome());
-            maquina.setFabricante(dto.fabricante());
-            maquina.setModelo(dto.modelo());
-            maquina.setDataCompra(dto.dataCompra());
-            this.maquinaRepository.save(maquina);
-        } catch (Exception e) {
-            throw new PersistenceException("Não foi possível atualizar o cadastro da máquina. Verifique!");
-        }
-    }
-
-    /**
      * Remove o cadastro de uma {@link Maquina}.
      *
      * @param id
