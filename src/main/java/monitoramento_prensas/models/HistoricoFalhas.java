@@ -37,6 +37,48 @@ public class HistoricoFalhas {
     @Column(name = "data_falha")
     private LocalDateTime dataFalha;
 
+    public HistoricoFalhas(){
+        super();
+    }
+
+    public HistoricoFalhas(Maquina maquina, String tipoFalha, LocalDateTime dataFalha) {
+        this.maquina = maquina;
+        this.tipoFalha = tipoFalha;
+        this.dataFalha = dataFalha;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Maquina getMaquina() {
+        return maquina;
+    }
+
+    public void setMaquina(Maquina maquina) {
+        this.maquina = maquina;
+    }
+
+    public String getTipoFalha() {
+        return tipoFalha;
+    }
+
+    public void setTipoFalha(String tipoFalha) {
+        this.tipoFalha = tipoFalha;
+    }
+
+    public LocalDateTime getDataFalha() {
+        return dataFalha;
+    }
+
+    public void setDataFalha(LocalDateTime dataFalha) {
+        this.dataFalha = dataFalha;
+    }
+
     /**
      * Retorna um objeto {@link monitoramento_prensas.models.dtos.HistoricoFalhasDTO}
      *
