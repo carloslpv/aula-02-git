@@ -44,6 +44,9 @@ public class HistoricoManutencaoService {
         try {
             final Maquina maquina = this.maquinaService.getMaquina(dto.idMaquina());
             HistoricoFalhas historicoFalha = null;
+            if(dto.idHistoricoFalha() != null && dto.idHistoricoFalha() > 0) {
+                historicoFalha = this.historicoFalhasService.getFalha(dto.idHistoricoFalha());
+            }
             if (dto.idHistoricoFalha() != null) {
                 historicoFalha = this.historicoFalhasService.getFalha(dto.idHistoricoFalha());
             }
