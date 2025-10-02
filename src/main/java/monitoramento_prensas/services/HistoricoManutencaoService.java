@@ -47,6 +47,7 @@ public class HistoricoManutencaoService {
             if (dto.idHistoricoFalha() != null) {
                 historicoFalha = this.historicoFalhasService.getFalha(dto.idHistoricoFalha());
             }
+            System.out.println(historicoFalha);
             final HistoricoManutencao historicoManutencao = new HistoricoManutencao(
                     maquina,
                     dto.tipoManutencao(),
